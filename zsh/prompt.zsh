@@ -126,14 +126,21 @@ function git_time_since_commit() {
 }
 
 # This keeps the number of todos always available the right hand side of my
-# command line. I filter it to only count those tagged as "+next", so it's more
-# of a motivation to clear out the list.
+# command line.
+# Todos are broken into the folowing system:
+# Backlog - todos with no priority
+# Doing - todos with prioirty (A)
+# Done - completed todos
 todo_count(){
-  if $(which todo &> /dev/null)
-  then
-    num=$(echo $(todo ls $1 | wc -l))
-    let todos=num-2
-    echo "$todos"
+  if  $(which todo &> /dev/null); then
+    local num=2;
+    if [ "$1" = "WIP" ]; then
+      num=$(echo $(todo lsp | wc -l));
+    elif [ "$1" = "Todo" ]; then
+      num=$(echo $(todo ls | wc -l));
+    fi
+    let todos=num-2;
+    echo "$todos";
   fi
 }
 
@@ -146,23 +153,6 @@ function todo_prompt() {
   fi
 }
 
-function notes_count() {
-  if [[ -z $1 ]]; then
-    local NOTES_PATTERN="TODO|FIXME|HACK";
-  else
-    local NOTES_PATTERN=$1;
-  fi
-  grep -ERn "\b($NOTES_PATTERN)\b" {app,config,lib,spec,test} 2>/dev/null | wc -l | sed 's/ //g'
-}
-
-function notes_prompt() {
-  local COUNT=$(notes_count $1);
-  if [ $COUNT != 0 ]; then
-    echo "$1: $COUNT";
-  else
-    echo "";
-  fi
-}
 
 
 export PROMPT='%{$fg[blue]%}%c \
@@ -171,7 +161,9 @@ $(git_time_since_commit)%{$reset_color%} \
 %{$fg[white]%}%(!.#.⚡)%{$reset_color%} '
 
 set_prompt () {
-  export RPROMPT="$(notes_prompt TODO) %{$fg_bold[yellow]%}$(notes_prompt HACK)%{$reset_color%} %{$fg_bold[red]%}$(notes_prompt FIXME)%{$reset_color%} %{$fg_bold[white]%}$(todo_prompt +next)%{$reset_color%}"
+  export RPROMPT='%{$fg[green]%}$(todo_prompt Todo)\
+  %{$fg[red]%}$(todo_prompt WIP)\
+  %{$reset_color%}'
 }
 
 precmd() {

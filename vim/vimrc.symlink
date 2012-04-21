@@ -33,7 +33,7 @@ call pathogen#helptags()
 " General Config
 " ==============
 
-let mapleader='\'
+let mapleader=','
 set encoding=utf-8
 set number                      " Line numbers are good
 set backspace=indent,eol,start  " Allow backspace in insert mode
@@ -79,6 +79,7 @@ au BufRead,BufNewFile *.hbs set filetype=mustache
 set incsearch        " Find the next match as we type the search
 set hlsearch         " Hilight searches by default
 set viminfo='100,f1  " Save up to 100 marks, enable capital marks
+nnoremap <leader><space> :noh<cr> " leader space gets rif of highlight
 
 " Turn Off Swap Files
 " ===================
