@@ -85,3 +85,6 @@
 [submodule "vim/vim.symlink/bundle/vim-less"]
 	path = vim/vim.symlink/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/vim.symlink/bundle/vim-jade"]
+	path = vim/vim.symlink/bundle/vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
