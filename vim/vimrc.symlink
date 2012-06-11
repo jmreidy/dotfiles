@@ -72,6 +72,7 @@ au BufRead,BufNewFile *.jbuilder setf ruby
 au BufRead,BufNewFile *.jeco setf html
 au BufRead,BufNewFile *.jss set filetype=css
 au BufRead,BufNewFile *.hbs set filetype=mustache
+au BufRead,BufNewFile *.json set ft=javascript
 
 " Search Settings
 " ===============
