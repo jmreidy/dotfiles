@@ -1,6 +1,6 @@
 [user]
-  name = Wynn Netherland
-  email = wynn.netherland@gmail.com
+  name = Just Reidy
+  email = jmreidy@rzrsharp.net
 [color]
   ui = auto
 [color "branch"]
@@ -46,11 +46,11 @@
   up = pull --rebase
 
 [core]
-  excludesfile = /Users/wynn/.gitignore_global
+  excludesfile = /Users/jmreidy/.gitignore_global
 [branch]
   autosetuprebase = always
 
 [init]
   templatedir = ~/.git_template
 [github]
-  user = pengwynn
+  user = jmreidy
