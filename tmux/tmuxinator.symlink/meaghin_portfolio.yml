@@ -1,0 +1,11 @@
+# ~/.tmuxinator/meaghinkennedy.com.yml
+# you can make as many tabs as you wish...
+
+project_name: meaghin_portfolio
+project_root: ~/Workspace/MeaghinKennedy.com
+tabs:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim
+        - sudo httpster -p 80

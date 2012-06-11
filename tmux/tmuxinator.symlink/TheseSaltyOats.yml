@@ -1,0 +1,12 @@
+# ~/.tmuxinator/TheseSaltyOats.yml
+# you can make as many tabs as you wish...
+
+project_name: TheseSaltyOats
+project_root: ~/Workspace/TheseSaltyOats
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim .
+        - #empty
+  - server: nodemon app/index.coffee
