@@ -161,9 +161,10 @@ $(git_time_since_commit)%{$reset_color%} \
 %{$fg[white]%}%(!.#.⚡)%{$reset_color%} '
 
 set_prompt () {
-  export RPROMPT='%{$fg[green]%}$(todo_prompt Todo)\
-  %{$fg[red]%}$(todo_prompt WIP)\
-  %{$reset_color%}'
+  # export RPROMPT='%{$fg[green]%}$(todo_prompt Todo)\
+  # %{$fg[red]%}$(todo_prompt WIP)\
+  # %{$reset_color%}'
+  export RPROMPT='%{$reset_color%}'
 }
 
 precmd() {

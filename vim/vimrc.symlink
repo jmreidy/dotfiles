@@ -59,6 +59,7 @@ set t_Co=256
 colorscheme solarized
 set background=dark
 
+
 " Filetype overrides
 " ==================
 
@@ -88,16 +89,6 @@ nnoremap <leader><space> :noh<cr> " leader space gets rif of highlight
 set noswapfile
 set nobackup
 set nowritebackup
-
-" Persistent Undo
-" ===============
-
-" Keep undo history across sessions, by storing in file
-" Only works in MacVim (gui) mode
-if has('gui_running')
-  set undodir=~/.vim/backups
-  set undofile
-endif
 
 " Indentation and Display
 " =======================
@@ -151,21 +142,3 @@ set statusline+=%l/%L:%v                        " Set <line number>/<total lines
 set statusline+=\                               " Set ending space
 
 
-" Privatize Ruby methods
-" ===========
-
-function! Privatize()
-  let priorMethod = PriorMethodDefinition()
-  exec "normal iprivate :" . priorMethod  . "\<Esc>=="
-endfunction
-
-function! PriorMethodDefinition()
-  let lineNumber = search('def', 'bn')
-  let line       = getline(lineNumber)
-  if line == 0
-    echo "No prior method definition found"
-  endif
-  return matchlist(line, 'def \(\w\+\).*')[1]
-endfunction
-
-map <Leader>p :call Privatize()<CR>

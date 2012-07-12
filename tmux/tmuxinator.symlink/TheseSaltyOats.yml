@@ -4,9 +4,9 @@
 project_name: TheseSaltyOats
 project_root: ~/Workspace/TheseSaltyOats
 tabs:
-  - editor:
-      layout: main-vertical
+  - vim:
+      layout: main-horizontal
       panes:
         - vim .
         - #empty
-  - server: nodemon app/index.coffee
+  - monitor:
