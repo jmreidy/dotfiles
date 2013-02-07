@@ -66,6 +66,7 @@
 [submodule "vim/vim.symlink/bundle/snipmate"]
 	path = vim/vim.symlink/bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
+  ignore = dirty
 [submodule "vim/vim.symlink/bundle/handlebars"]
 	path = vim/vim.symlink/bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
