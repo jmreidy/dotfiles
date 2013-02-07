@@ -1,0 +1,13 @@
+# ~/.tmuxinator/voltron-pg.yml
+# you can make as many tabs as you wish...
+
+project_name: node-sql
+project_root: ~/Workspace/Libs/node-sql
+tabs:
+  - node-sql vim:
+      panes:
+        - vim .
+  - node-sql console:
+      panes:
+        -
+

@@ -1,0 +1,13 @@
+# ~/.tmuxinator/TheseSaltyOats.yml
+# you can make as many tabs as you wish...
+
+project_name: voltron-model
+project_root: ~/Workspace/voltron-model
+tabs:
+  - voltron-model vim:
+      panes:
+        - vim .
+  - voltron-model console:
+      panes:
+        -
+

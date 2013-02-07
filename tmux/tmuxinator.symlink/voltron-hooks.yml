@@ -1,0 +1,13 @@
+# ~/.tmuxinator/TheseSaltyOats.yml
+# you can make as many tabs as you wish...
+
+project_name: voltron-hooks
+project_root: ~/Workspace/voltron-hooks
+tabs:
+  - voltron-hooks vim:
+      panes:
+        - vim .
+  - voltron-hooks console:
+      panes:
+        -
+

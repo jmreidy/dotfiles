@@ -72,7 +72,6 @@ au BufRead,BufNewFile *.zsh-theme set ft=zsh
 au BufRead,BufNewFile *.jbuilder setf ruby
 au BufRead,BufNewFile *.jeco setf html
 au BufRead,BufNewFile *.jss set filetype=css
-au BufRead,BufNewFile *.hbs set filetype=mustache
 au BufRead,BufNewFile *.json set ft=javascript
 
 " Search Settings
@@ -112,7 +111,7 @@ set linebreak                         " Wrap lines at convenient points
 " =====
 
 set foldmethod=indent   " Fold based on indent
-set foldnestmax=3       " Deepest fold is 3 levels
+set foldnestmax=8       " Deepest fold is 3 levels
 set nofoldenable        " Don't fold by default
 
 " Completion

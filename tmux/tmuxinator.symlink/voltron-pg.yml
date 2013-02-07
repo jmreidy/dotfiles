@@ -1,0 +1,13 @@
+# ~/.tmuxinator/voltron-pg.yml
+# you can make as many tabs as you wish...
+
+project_name: voltron-pg
+project_root: ~/Workspace/voltron-postgres-adapter
+tabs:
+  - voltron-pg vim:
+      panes:
+        - vim .
+  - voltron-pg console:
+      panes:
+        -
+

@@ -1,0 +1,13 @@
+# ~/.tmuxinator/TheseSaltyOats.yml
+# you can make as many tabs as you wish...
+
+project_name: voltron-migrator
+project_root: ~/Workspace/voltron-migrator
+tabs:
+  - voltron-migrator vim:
+      panes:
+        - vim .
+  - voltron-migrator console:
+      panes:
+        -
+

@@ -1,0 +1,19 @@
+# ~/.tmuxinator/TheseSaltyOats.yml
+# you can make as many tabs as you wish...
+
+project_name: Seasonally
+project_root: ~/Workspace/Seasonally
+tabs:
+  - Seasonally vim:
+      panes:
+        - vim .
+  - Seasonally server:
+      panes:
+        - grunt dev
+  - Seasonally console:
+      panes:
+        -
+  - Seasonally db:
+      panes:
+        - psql seasonally_dev
+

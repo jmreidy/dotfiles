@@ -1,0 +1,13 @@
+# ~/.tmuxinator/TheseSaltyOats.yml
+# you can make as many tabs as you wish...
+
+project_name: voltron-validator
+project_root: ~/Workspace/voltron-validator
+tabs:
+  - voltron-validator vim:
+      panes:
+        - vim .
+  - voltron-validator console:
+      panes:
+        -
+
