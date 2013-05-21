@@ -2,12 +2,12 @@
 # you can make as many tabs as you wish...
 
 project_name: opal
-project_root: ~/Workspace/opal/oaxaca
+project_root: ~/Workspace/opal/Opal
 tabs:
   - Opal vim:
       panes:
         - vim .
   - Opal server:
       panes:
-        - export APP_CLIENT_KEY=bf83507ec8df8ea3b47de8f510c3819d
+        -
 

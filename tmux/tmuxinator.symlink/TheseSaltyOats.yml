@@ -4,10 +4,9 @@
 project_name: TheseSaltyOats
 project_root: ~/Workspace/TheseSaltyOats
 tabs:
-  - vim:
-      layout: 9f55,191x48,0,0{100x48,0,0,90x48,101,0[90x28,101,0,90x19,101,29]}
-      panes:
-        - vim .
-        - grunt tdd
-        - grunt dev
-  - monitor:
+  - TSO Edit:
+      - vim .
+  - TSO Server:
+      - grunt dev
+  - TSO Console:
+      -
