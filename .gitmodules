@@ -70,9 +70,6 @@
 [submodule "vim/vim.symlink/bundle/handlebars"]
 	path = vim/vim.symlink/bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
-[submodule "Slogger"]
-	path = Slogger
-	url = git://github.com/ttscoff/Slogger.git
 [submodule "vim/vim.symlink/bundle/vim-dispatch"]
 	path = vim/vim.symlink/bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
