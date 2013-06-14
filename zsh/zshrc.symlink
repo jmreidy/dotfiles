@@ -1,9 +1,10 @@
 export GHI_PAGER=less
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin:/Users/jmreidy/.dotfiles/bin:/Users/jmreidy/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
+export PATH=$ZSH/bin:$PATH
+
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Workspace
@@ -25,5 +26,7 @@ compinit
 # load every completion after autocomplete loads
 for config_file ($ZSH/**/completion.sh) source $config_file
 
-eval "$(rbenv init -)"
-source ~/.nvm/nvm.sh
+#tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+source /etc/profile.d/vagrant-host-path.sh

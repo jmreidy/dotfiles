@@ -1,1 +1,1 @@
-alias vim="mvim -v"
+[[ -s mvim ]] && alias vim="mvim -v"
