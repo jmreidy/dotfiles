@@ -29,4 +29,4 @@ for config_file ($ZSH/**/completion.sh) source $config_file
 #tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-source /etc/profile.d/vagrant-host-path.sh
+for startup_file (/etc/profile.d/*.sh) source $startup_file

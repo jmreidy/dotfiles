@@ -1,2 +1,2 @@
 # aliases for GRC from homebrew
-source `brew --prefix grc`/etc/grc.bashrc
+[[ -s brew ]] && source `brew --prefix grc`/etc/grc.bashrc
