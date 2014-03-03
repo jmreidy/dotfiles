@@ -1,0 +1,196 @@
+" Vim
+" ===
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+filetype off " required by Vundle
+
+" Automatically reload vimrc when it's saved
+autocmd! BufWritePost vimrc.symlink so ~/.vimrc
+
+" Source ~/.vimrc.before if it exists
+if filereadable(expand('~/.vimrc.before'))
+  source ~/.vimrc.before
+endif
+
+" Strip whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Toggle paste
+nnoremap <F6> :set invpaste paste?<CR>
+set pastetoggle=<F6>
+
+" VUNDLE
+" ======
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'rking/ag.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'nono/vim-handlebars'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'tpope/vim-surround'
+
+" Fireplace Clojure
+Bundle 'tpope/vim-fireplace'
+" Rainbow parentheses
+Bundle 'kien/rainbow_parentheses.vim'
+"  Parentheses colours using Solarized
+let g:rbpt_colorpairs = [
+  \ [ '13', '#6c71c4'],
+  \ [ '5',  '#d33682'],
+  \ [ '1',  '#dc322f'],
+  \ [ '9',  '#cb4b16'],
+  \ [ '3',  '#b58900'],
+  \ [ '2',  '#859900'],
+  \ [ '6',  '#2aa198'],
+  \ [ '4',  '#268bd2'],
+  \ ]
+
+" Enable rainbow parentheses for all buffers
+augroup rainbow_parentheses
+  au!
+  au VimEnter * RainbowParenthesesActivate
+  au BufEnter * RainbowParenthesesLoadRound
+  au BufEnter * RainbowParenthesesLoadSquare
+  au BufEnter * RainbowParenthesesLoadBraces
+augroup END
+
+" SlimV
+Bundle 'kovisoft/slimv'
+
+" vim-clojure-static
+Bundle 'guns/vim-clojure-static'
+
+
+
+" General Config
+" ==============
+
+let mapleader=','
+set encoding=utf-8
+set relativenumber
+set number                      " Line numbers are good
+set backspace=indent,eol,start  " Allow backspace in insert mode
+set history=1000                " Store lots of :cmdline history
+set showcmd                     " Show incomplete cmds down the bottom
+set showmode                    " Show current mode down the bottom
+set gcr=a:blinkon0              " Disable cursor blink
+set autoread                    " Reload files changed outside vim
+set laststatus=2                " Always show status line
+set clipboard=unnamed           " Use system clipboard
+set hidden                      " Buffers can exist in the background
+set splitright                  " Opens vertical split right of current window
+set splitbelow                  " Opens horizontal split below current window
+set iskeyword-=_                " Underscores denote words
+"set shortmess=filnxtToOI       " see :help shortmess
+                                " http://items.sjbach.com/319/configuring-vim-right
+
+" Syntax
+" ======
+
+syntax on
+syntax enable
+set t_Co=256
+colorscheme solarized
+set background=dark
+
+
+" Filetype overrides
+" ==================
+
+autocmd! BufRead,BufNewFile *.jbuilder,Gemfile,Rakefile,Procfile,Guardfile setf ruby
+au BufRead,BufNewFile /^[A-Z]+\w*file$/ setf ruby
+au BufRead,BufNewFile *.thor set filetype=ruby
+au BufRead,BufNewFile Guardfile set filetype=ruby
+au BufRead,BufNewFile */nginx/*.conf set filetype=nginx
+au BufRead,BufNewFile *.zsh-theme set ft=zsh
+au BufRead,BufNewFile *.jbuilder setf ruby
+au BufRead,BufNewFile *.jeco setf html
+au BufRead,BufNewFile *.jss set filetype=css
+au BufRead,BufNewFile *.json set ft=javascript
+
+" Search Settings
+" ===============
+
+set incsearch        " Find the next match as we type the search
+set hlsearch         " Hilight searches by default
+set viminfo='100,f1  " Save up to 100 marks, enable capital marks
+nnoremap <leader><space> :noh<cr> " leader space gets rif of highlight
+
+" Turn Off Swap Files
+" ===================
+
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Indentation and Display
+" =======================
+
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
+filetype plugin on
+filetype indent on
+
+set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
+set nowrap                            " Don't wrap lines
+set linebreak                         " Wrap lines at convenient points
+
+" Folds
+" =====
+
+set foldmethod=indent   " Fold based on indent
+set foldnestmax=8       " Deepest fold is 3 levels
+set nofoldenable        " Don't fold by default
+
+" Completion
+" ==========
+
+set wildmode=list:longest
+set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+
+" Scrolling
+" =========
+
+" Start scrolling when we're getting close to margins
+set scrolloff=10
+set sidescrolloff=15
+set sidescroll=1
+
+" Status Line
+" ===========
+
+set statusline=                                 " Override default
+set statusline+=\ %f\ %m\ %r                    " Show filename/path
+set statusline+=%=                              " Set right-side status info after this line
+set statusline+=%l/%L:%v                        " Set <line number>/<total lines>:<column>
+set statusline+=\                               " Set ending space
+
+
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc fileset showmode
+
+
+" Window switching
+" =========
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
