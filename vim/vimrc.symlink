@@ -38,6 +38,8 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'tpope/vim-surround'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-classpath'
 
 " Fireplace Clojure
 Bundle 'tpope/vim-fireplace'
@@ -194,3 +196,51 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+" Nerdtree
+" ========
+map <Leader>n :NERDTreeToggle<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 30
+
+
+" ctrl-p
+" ======
+let g:ctrlp_max_height = 7
+let g:ctrlp_dotfiles = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir' : 'vendor$\|node_modules$\|\.git$\|\.svn$\|\.sass-cache$\|public/compiled$\|vendor/gems$',
+  \ 'file': '\.git$\|\.hg$\|\.svn$\|\.scssc$'
+  \ }
+let g:ctrlp_follow_symlinks = 2
+
+
+
+
+" syntastic/jsxhint
+" =======
+if exists('g:loaded_syntastic_jsx_jsxhint_checker')
+    finish
+endif
+let g:loaded_syntastic_jsx_jsxhint_checker = 1
+
+if !exists('g:syntastic_jsx_jsxhint_conf')
+    let g:syntastic_jsx_jsxhint_conf = ''
+endif
+
+let s:save_cpo = &cpo
+set cpo&vim
+
+function! SyntaxCheckers_jsx_jsxhint_GetLocList() dict
+	let makeprg = self.makeprgBuild({'args': ''})
+	let errorformat = '%E%f: line %l\, col %v\, %m'
+
+	return SyntasticMake({'makeprg': makeprg, 'errorformat': errorformat, 'defaults': {'bufnr': bufnr('')} })
+endfunction
+
+call g:SyntasticRegistry.CreateAndRegisterChecker({'filetype': 'jsx', 'name': 'jsxhint'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
