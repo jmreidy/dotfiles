@@ -38,6 +38,13 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'Lokaltog/vim-easymotion'
+
+Bundle 'Shougo/neocomplete'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
+
 
 " Fireplace Clojure
 Bundle 'tpope/vim-fireplace'
@@ -164,6 +171,25 @@ set wildmode=list:longest
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
 set wildignore+=*vim/backups*
+
+
+" Neocomplete Plugin key-mappings.
+imap <C-l>     <Plug>(neosnippet_expand_or_jump)
+smap <C-l>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-l>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " Scrolling
 " =========
