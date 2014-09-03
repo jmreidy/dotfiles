@@ -24,3 +24,6 @@ compinit
 # load every completion after autocomplete loads
 # for comp_file ($ZSH/**/completion.sh) source $comp_file
 
+
+# added by travis gem
+[ -f /Users/jmreidy/.travis/travis.sh ] && source /Users/jmreidy/.travis/travis.sh

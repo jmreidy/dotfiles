@@ -38,13 +38,10 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'tpope/vim-surround'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-repeat'
 Bundle 'Lokaltog/vim-easymotion'
-
-Bundle 'Shougo/neocomplete'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
-
 
 " Fireplace Clojure
 Bundle 'tpope/vim-fireplace'
@@ -220,3 +217,22 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+" Nerdtree
+" ========
+map <Leader>n :NERDTreeToggle<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 30
+
+
+" ctrl-p
+" ======
+let g:ctrlp_max_height = 7
+let g:ctrlp_dotfiles = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir' : 'vendor$\|node_modules$\|\.git$\|\.svn$\|\.sass-cache$\|public/compiled$\|vendor/gems$',
+  \ 'file': '\.git$\|\.hg$\|\.svn$\|\.scssc$'
+  \ }
+let g:ctrlp_follow_symlinks = 2
