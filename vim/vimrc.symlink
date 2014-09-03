@@ -215,32 +215,3 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.git$\|\.hg$\|\.svn$\|\.scssc$'
   \ }
 let g:ctrlp_follow_symlinks = 2
-
-
-
-
-" syntastic/jsxhint
-" =======
-if exists('g:loaded_syntastic_jsx_jsxhint_checker')
-    finish
-endif
-let g:loaded_syntastic_jsx_jsxhint_checker = 1
-
-if !exists('g:syntastic_jsx_jsxhint_conf')
-    let g:syntastic_jsx_jsxhint_conf = ''
-endif
-
-let s:save_cpo = &cpo
-set cpo&vim
-
-function! SyntaxCheckers_jsx_jsxhint_GetLocList() dict
-	let makeprg = self.makeprgBuild({'args': ''})
-	let errorformat = '%E%f: line %l\, col %v\, %m'
-
-	return SyntasticMake({'makeprg': makeprg, 'errorformat': errorformat, 'defaults': {'bufnr': bufnr('')} })
-endfunction
-
-call g:SyntasticRegistry.CreateAndRegisterChecker({'filetype': 'jsx', 'name': 'jsxhint'})
-
-let &cpo = s:save_cpo
-unlet s:save_cpo
