@@ -7,3 +7,9 @@
 [submodule "emacs/live-packs.symlink/evilmode-pack"]
 	path = emacs/live-packs.symlink/evilmode-pack
 	url = https://github.com/siancu/evilmode-pack
+[submodule "emacs/live-packs.symlink/jmreidy-pack/vendor/handlebars-mode"]
+	path = emacs/live-packs.symlink/jmreidy-pack/vendor/handlebars-mode
+	url = git@github.com:danielevans/handlebars-mode.git
+[submodule "emacs/live-packs.symlink/jmreidy-pack/vendor/web-mode"]
+	path = emacs/live-packs.symlink/jmreidy-pack/vendor/web-mode
+	url = git@github.com:fxbois/web-mode.git
