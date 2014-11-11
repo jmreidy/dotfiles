@@ -1,0 +1,3 @@
+(live-add-packs '(~/.live-packs/evilmode-pack))
+
+(live-append-packs '(~/.live-packs/jmreidy-pack))

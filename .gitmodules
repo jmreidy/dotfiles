@@ -4,3 +4,6 @@
 [submodule "vim/vim.symlink/bundle/Vundle.vim"]
 	path = vim/vim.symlink/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
+[submodule "emacs/live-packs.symlink/evilmode-pack"]
+	path = emacs/live-packs.symlink/evilmode-pack
+	url = https://github.com/siancu/evilmode-pack
