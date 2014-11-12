@@ -13,3 +13,15 @@
 [submodule "emacs/live-packs.symlink/jmreidy-pack/vendor/web-mode"]
 	path = emacs/live-packs.symlink/jmreidy-pack/vendor/web-mode
 	url = git@github.com:fxbois/web-mode.git
+[submodule "emacs/live-packs.symlink/jmreidy-pack/vendor/emacs-color-theme-solarized"]
+	path = emacs/live-packs.symlink/jmreidy-pack/vendor/emacs-color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized
+[submodule "emacs/live-packs.symlink/jmreidy-pack/vendor/solarized-emacs"]
+	path = emacs/live-packs.symlink/jmreidy-pack/vendor/solarized-emacs
+	url = git@github.com:bbatsov/solarized-emacs.git
+[submodule "emacs/live-packs.symlink/jmreidy-pack/vendor/emacs-spacegray"]
+	path = emacs/live-packs.symlink/jmreidy-pack/vendor/emacs-spacegray
+	url = git@github.com:bruce/emacs-spacegray-theme.git
+[submodule "emacs/live-packs.symlink/jmreidy-pack/vendor/tomorrow-theme-emacs"]
+	path = emacs/live-packs.symlink/jmreidy-pack/vendor/tomorrow-theme-emacs
+	url = git@github.com:xhh/tomorrow-theme-emacs.git
