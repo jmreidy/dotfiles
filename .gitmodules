@@ -27,4 +27,4 @@
 	url = git@github.com:xhh/tomorrow-theme-emacs.git
 [submodule "emacs/emacs.d.symlink"]
 	path = emacs/emacs.d.symlink
-	url = git://github.com/bbatsov/prelude.git
+	url = git://github.com/jmreidy/prelude.git
